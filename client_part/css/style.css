@@ -1,6 +1,6 @@
 
 .product-grid {
-    display: grid; /* 1. Включаем режим Grid Layout для этого контейнера */
+    display: grid;
 
     /* 2. Определяем колонки: 5 колонок, каждая занимает равную часть доступного пространства (1fr) */
     grid-template-columns: repeat(5, 1fr);
