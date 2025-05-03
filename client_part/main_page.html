@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лампочка - Главная страница</title>
+    <!-- Подключаем normalize.css (если используете) -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Подключаем основной файл стилей -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Сюда можно будет добавить подключение шрифтов, если нужно -->
+</head>
+<body>
+
+<header class="page-header">
+    <div class="header-top">
+        <div class="container header-top-container">
+            <a href="main_page.html" class="logo header-logo">
+                <img src="logo_ikons/logolampa.png" alt="Логотип Лампочка">
+            </a>
+            <button class="button catalog-button" type="button">
+                <img src="logo_ikons/burger-menu.svg" alt="" width="27" height="27" aria-hidden="true">
+                <span class="visually-hidden">Каталог товаров</span>
+            </button>
+            <form class="search-form" action="#" method="get">
+                <input class="search-input" type="search" name="search" placeholder="Поиск по товарам"
+                       aria-label="Поиск по товарам">
+                <button class="button search-button" type="submit">
+                    <!-- Иконка поиска -->
+                    <span class="visually-hidden">Найти</span>
+                </button>
+            </form>
+            <ul class="user-actions-list">
+                <li class="user-actions-item">
+                    <a href="#" class="user-action-link compare-link">
+                        <!-- Иконка сравнения -->
+                        <span class="visually-hidden">Сравнение</span>
+                    </a>
+                </li>
+                <li class="user-actions-item">
+                    <a href="#" class="user-action-link favorite-link">
+                        <!-- Иконка избранного -->
+                        <span class="visually-hidden">Избранное</span>
+                    </a>
+                </li>
+                <li class="user-actions-item">
+                    <a href="cart.html" class="user-action-link cart-link">
+                        <!-- Иконка корзины -->
+                        <span class="visually-hidden">Корзина</span>
+                        <!-- Сюда можно добавить счетчик товаров -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">О магазине</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Доставка</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Оплата</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Производители</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Отзывы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Акции</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="page-main">
+    <div class="container">
+        <h1 class="visually-hidden">Каталог товаров магазина Лампочка</h1> <!-- Скрытый заголовок для семантики -->
+
+        <section class="catalog">
+            <h2 class="visually-hidden">Список товаров</h2>
+            <div class="product-grid">
+                <!-- Пример карточки товара (повторить для всех товаров) -->
+                <article class="product-card">
+                    <a href="#" class="product-image-link">
+                        <!-- Рамка для выделенного товара (добавляется классом, например 'highlighted') -->
+                        <img class="product-image" src="images/product1.jpg" alt="Лампа-лофт" width="200" height="200">
+                        <!-- Укажите реальные размеры и путь -->
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="#">Лампа-лофт</a></h3>
+                        <div class="product-buy">
+                            <span class="product-price">3 460 руб</span>
+                            <button class="button add-to-cart-button" type="button">
+                                <!-- Иконка корзины -->
+                                <span class="visually-hidden">Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- /Пример карточки товара -->
+
+                <!-- Повторите <article class="product-card">...</article> для остальных товаров -->
+
+                <article class="product-card highlighted"> <!-- Пример выделенной карточки -->
+                    <a href="#" class="product-image-link">
+                        <img class="product-image" src="images/product-loft-highlighted.jpg" alt="Лампа-лофт выделенная"
+                             width="200" height="200">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="#">Лампа-лофт</a></h3>
+                        <div class="product-buy">
+                            <span class="product-price">3 460 руб</span>
+                            <button class="button add-to-cart-button" type="button">
+                                <span class="visually-hidden">Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="page-footer">
+    <div class="container footer-container">
+        <div class="footer-column footer-logo-socials">
+            <a href="main_page.html" class="logo footer-logo">.
+                <img src="logo_ikons/logolampa.png" alt="Логотип Лампочка">
+            </a>
+        </div>
+        <div class="footer-column footer-socials">
+            <p class="socials-title">Мы в соцсетях</p>
+            <ul class="socials-list">
+                <li class="socials-item"><a href="#" class="socials-link facebook">Facebook</a></li>
+                <!-- Заменить текст иконками -->
+                <li class="socials-item"><a href="#" class="socials-link youtube">Youtube</a></li>
+                <li class="socials-item"><a href="#" class="socials-link whatsapp">Whatsapp</a></li>
+                <li class="socials-item"><a href="#" class="socials-link instagram">Instagram</a></li>
+                <li class="socials-item"><a href="#" class="socials-link telegram">Telegram</a></li>
+                <li class="socials-item"><a href="#" class="socials-link viber">Viber</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer-actions">
+            <a href="#" class="button button-secondary contacts-button">Перейти в контакты</a>
+            <button class="button subscribe-button" type="button">
+                <!-- Иконка подписки -->
+                Подписаться
+            </button>
+        </div>
+    </div>
+</footer>
+
+<!-- Сюда можно будет добавить подключение JS-файлов -->
+<!-- <script src="js/script.js"></script> -->
+
+</body>
+</html>
