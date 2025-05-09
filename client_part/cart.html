@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Лампочка</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+    <!-- КОПИРУЕМ ШАПКУ ИЗ MAIN_PAGE.HTML -->
+    <header class="page-header">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="main_page.html" class="logo header-logo">
+                    <img src="images/logo.png" alt="Логотип Лампочка">
+                </a>
+                <button class="button catalog-button" type="button">
+                    <img src="images/burger-icon.svg" alt="" width="24" height="24" aria-hidden="true"> <!-- Замените на вашу иконку -->
+                    <span class="catalog-text">Каталог товаров</span>
+                    <span class="visually-hidden">Открыть каталог</span>
+                </button>
+                <form class="search-form" action="#" method="get">
+                    <input class="search-input" type="search" name="search" placeholder="Поиск по товарам" aria-label="Поиск по товарам">
+                    <button class="button search-button" type="submit">
+                        <img src="images/search-icon.svg" alt="Найти" width="20" height="20"> <!-- Замените на вашу иконку -->
+                    </button>
+                </form>
+                <ul class="user-actions-list">
+                    <li class="user-actions-item">
+                        <a href="#" class="user-action-link compare-link">
+                            <img src="images/compare-icon.svg" alt="Сравнение" width="27" height="27"> <!-- Замените на вашу иконку -->
+                        </a>
+                    </li>
+                    <li class="user-actions-item">
+                        <a href="#" class="user-action-link favorite-link">
+                            <img src="images/favorite-icon.svg" alt="Избранное" width="27" height="27"> <!-- Замените на вашу иконку -->
+                        </a>
+                    </li>
+                    <li class="user-actions-item">
+                        <a href="cart.html" class="user-action-link cart-link"> <!-- ССЫЛКА НА КОРЗИНУ УЖЕ ЕСТЬ -->
+                            <img src="logo_ikons/cart.svg" alt="" width="27" height="27" aria-hidden="true" class="cart-icon">
+                            <span class="cart-count">0</span>
+                            <span class="visually-hidden">Корзина</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/about-store-icon.svg" alt="" class="nav-link-icon">О магазине</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/delivery-icon.svg" alt="" class="nav-link-icon">Доставка</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/payment-icon.svg" alt="" class="nav-link-icon">Оплата</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/manufacturers-icon.svg" alt="" class="nav-link-icon">Производители</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/reviews-icon.svg" alt="" class="nav-link-icon">Отзывы</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="logo_ikons/actions-icon.svg" alt="" class="nav-link-icon">Акции</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- КОНЕЦ СКОПИРОВАННОЙ ШАПКИ -->
+
+    <main class="page-main cart-page">
+        <div class="container">
+            <div class="cart-header-bar">
+                <h1>Корзина</h1>
+                <button type="button" class="button-icon close-cart-button" aria-label="Закрыть корзину">
+                    <img src="images/close-icon.svg" alt=""> <!-- Замените на вашу иконку крестика -->
+                </button>
+            </div>
+
+            <ul class="cart-items-list">
+                <!-- Пример товара в корзине (повторяется для каждого товара) -->
+                <li class="cart-item">
+                    <img src="images/product1.jpg" alt="Лампа-лофт" class="cart-item-image"> <!-- Замените -->
+                    <div class="cart-item-info">
+                        <h2 class="cart-item-title">Лампа-лофт</h2>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                            <span class="quantity-value">1</span>
+                            <button type="button" class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                        </div>
+                    </div>
+                    <p class="cart-item-price">3 460 руб/шт</p>
+                    <button type="button" class="button-icon remove-item-button" aria-label="Удалить товар">
+                        <img src="images/remove-icon.svg" alt=""> <!-- Замените на вашу иконку крестика -->
+                    </button>
+                </li>
+
+                <li class="cart-item highlighted"> <!-- Выделенный товар -->
+                    <img src="images/loft-bra-clam.jpg" alt="Лофт бра Clam" class="cart-item-image"> <!-- Замените -->
+                    <div class="cart-item-info">
+                        <h2 class="cart-item-title">Лофт бра Clam</h2>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                            <span class="quantity-value">2</span>
+                            <button type="button" class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                        </div>
+                    </div>
+                    <p class="cart-item-price">10 560 руб/шт</p>
+                    <button type="button" class="button-icon remove-item-button" aria-label="Удалить товар">
+                        <img src="images/remove-icon.svg" alt=""> <!-- Замените на вашу иконку крестика -->
+                    </button>
+                </li>
+                <!-- Добавьте еще 2 товара по аналогии -->
+                 <li class="cart-item">
+                    <img src="images/lampa-bombilla.jpg" alt="Лампа Bombilla" class="cart-item-image"> <!-- Замените -->
+                    <div class="cart-item-info">
+                        <h2 class="cart-item-title">Лампа Bombilla</h2>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                            <span class="quantity-value">2</span>
+                            <button type="button" class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                        </div>
+                    </div>
+                    <p class="cart-item-price">19 690 руб/шт</p>
+                    <button type="button" class="button-icon remove-item-button" aria-label="Удалить товар">
+                        <img src="images/remove-icon.svg" alt=""> <!-- Замените на вашу иконку крестика -->
+                    </button>
+                </li>
+                 <li class="cart-item">
+                    <img src="images/product-loft-green.jpg" alt="Лампа-лофт зеленая" class="cart-item-image"> <!-- Замените -->
+                    <div class="cart-item-info">
+                        <h2 class="cart-item-title">Лампа-лофт</h2>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn minus" aria-label="Уменьшить количество">-</button>
+                            <span class="quantity-value">1</span>
+                            <button type="button" class="quantity-btn plus" aria-label="Увеличить количество">+</button>
+                        </div>
+                    </div>
+                    <p class="cart-item-price">3 460 руб/шт</p>
+                    <button type="button" class="button-icon remove-item-button" aria-label="Удалить товар">
+                        <img src="images/remove-icon.svg" alt=""> <!-- Замените на вашу иконку крестика -->
+                    </button>
+                </li>
+            </ul>
+
+            <div class="cart-total">
+                <span>Всего:</span>
+                <span class="total-amount">67 280</span> <!-- Можно добавить <span class="currency">руб</span> -->
+            </div>
+
+            <div class="cart-actions">
+                <a href="main_page.html" class="button button-red continue-shopping-btn">Продолжить покупки</a>
+                <a href="checkout.html" class="button button-red checkout-btn">Оформить заказ</a> <!-- Ссылка на следующую страницу -->
+            </div>
+        </div>
+    </main>
+
+    <!-- КОПИРУЕМ ПОДВАЛ ИЗ MAIN_PAGE.HTML -->
+    <footer class="page-footer">
+        <div class="container footer-container">
+            <div class="footer-column footer-logo-column">
+                 <a href="main_page.html" class="logo footer-logo">
+                    <img src="images/logo-footer.png" alt="Логотип Лампочка">
+                 </a>
+            </div>
+            <div class="footer-column footer-socials-column">
+                <p class="socials-title">
+                    <img src="images/social-group-icon.svg" alt="" class="socials-title-icon">Мы в соцсетях
+                </p>
+                <ul class="socials-list">
+                    <li class="socials-item"><a href="#" class="socials-link facebook"><img src="images/facebook-icon.svg" alt="" class="socials-icon"> Facebook</a></li>
+                    <li class="socials-item"><a href="#" class="socials-link youtube"><img src="images/youtube-icon.svg" alt="" class="socials-icon"> Youtube</a></li>
+                    <li class="socials-item"><a href="#" class="socials-link whatsapp"><img src="images/whatsapp-icon.svg" alt="" class="socials-icon"> Whatsapp</a></li>
+                    <li class="socials-item"><a href="#" class="socials-link instagram"><img src="images/instagram-icon.svg" alt="" class="socials-icon"> Instagram</a></li>
+                    <li class="socials-item"><a href="#" class="socials-link telegram"><img src="images/telegram-icon.svg" alt="" class="socials-icon"> Telegram</a></li>
+                    <li class="socials-item"><a href="#" class="socials-link viber"><img src="images/viber-icon.svg" alt="" class="socials-icon"> Viber</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-actions-column">
+                 <a href="#" class="button button-red contacts-button">Перейти в контакты</a>
+                 <button class="button button-red subscribe-button" type="button">
+                     <img src="images/subscribe-icon.svg" alt="" class="subscribe-icon">Подписаться
+                 </button>
+            </div>
+        </div>
+    </footer>
+    <!-- КОНЕЦ СКОПИРОВАННОГО ПОДВАЛА -->
+
+</body>
+</html>
