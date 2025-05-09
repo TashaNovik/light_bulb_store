@@ -51,6 +51,23 @@
     fill: currentColor; /* Чтобы цвет SVG наследовался от кнопки */
 }
 
+.catalog-button .catalog-text { /* Предположим, текст "Каталог товаров" обернут в span с классом catalog-text */
+    /* display: inline; */ /* Показываем по умолчанию */
+}
+
+@media (max-width: 767px) { /* Для экранов МЕНЬШЕ 768px */
+    .catalog-button .catalog-text {
+        display: none; /* Скрываем текст */
+    }
+    .catalog-button {
+        padding: 8px; /* Уменьшаем padding, так как текста нет */
+    }
+    /* Возможно, придется уменьшить отступы у других элементов шапки */
+    .search-form {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
 
 /* --- Форма поиска --- */
 .search-form {
@@ -170,9 +187,11 @@
 }
 
 .container {
+    width: 100%; /* Занимает всю доступную ширину */
     max-width: 1200px; /* Пример, возьмите из Figma */
     margin: 0 auto; /* Центрирование */
     padding: 0 15px; /* Боковые отступы, чтобы контент не прилипал к краям на малых экранах */
+    box-sizing: border-box; /* Важно, чтобы padding не увеличивал общую ширину */
 }
 
 .product-grid {
@@ -193,6 +212,38 @@
        чтобы она не прилегала к краям .container */
     /* padding: 20px 0; */ /* Например, 20px сверху/снизу, 0 по бокам */
 }
+
+/* Для маленьких планшетов и больших телефонов (например, экраны от 576px) */
+@media (min-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 20px;
+    }
+}
+
+/* Для планшетов (например, экраны от 768px) */
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+        /* gap: 20px; уже унаследован, если не меняем */
+    }
+}
+
+/* Для небольших десктопов (например, экраны от 992px) */
+@media (min-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    }
+}
+
+/* Для больших десктопов (например, экраны от 1200px) */
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(5, 1fr); /* Ваши исходные 5 колонок */
+        /* gap: 20px; /* или тот, что был изначально */
+    }
+}
+
 
 /* Базовые стили для самой карточки (чтобы она выглядела как карточка) */
 .product-card {
@@ -276,10 +327,30 @@
 
 .footer-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between; /* Распределяет колонки по ширине */
     align-items: center; /* Выравнивает колонки по вертикальному центру */
-    gap: 20px; /* Промежуток между колонками, если space-between не дает нужного эффекта */
+    text-align: center; /* Центрируем текст внутри колонок */
+    gap: 30px; /* Промежуток между колонками, если space-between не дает нужного эффекта */
 }
+
+.socials-list { /* Список соцсетей можно оставить гридом или сделать в одну колонку */
+    /* grid-template-columns: repeat(2, 1fr); /* Может остаться так или измениться на 1 колонку */
+    /* max-width: 100%; */
+}
+
+@media (min-width: 768px) { /* Для планшетов и больше - возвращаем горизонтальное расположение */
+    .footer-container {
+        flex-direction: row; /* Возвращаем в ряд */
+        justify-content: space-between;
+        align-items: flex-start; /* Или center, в зависимости от дизайна */
+        text-align: left; /* Возвращаем выравнивание по левому краю для колонок */
+    }
+    .footer-socials-column {
+        text-align: center; /* Если нужно, чтобы именно этот блок оставался по центру */
+    }
+}
+Use code with cautio
 
 .footer-column {
     /* Можно добавить flex-basis или width, если нужно точное распределение ширины,
