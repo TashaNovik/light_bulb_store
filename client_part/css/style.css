@@ -43,6 +43,7 @@
     width: 20px; /* Размер иконки */
     height: 20px;
 }
+
 .catalog-button svg { /* Если иконка бургер-меню это inline SVG */
     margin-right: 8px;
     width: 20px;
@@ -73,6 +74,7 @@
     outline: none; /* Убираем стандартную обводку при фокусе */
     color: #333;
 }
+
 .search-input::placeholder {
     color: #888; /* Цвет плейсхолдера */
 }
@@ -85,11 +87,13 @@
     display: flex; /* Для выравнивания SVG, если используется */
     align-items: center;
 }
+
 .search-button img { /* Если иконка поиска это img */
     width: 20px; /* Размер иконки */
     height: 20px;
     display: block;
 }
+
 .search-button svg { /* Если иконка поиска это inline SVG */
     width: 20px;
     height: 20px;
@@ -108,6 +112,7 @@
 .user-actions-item {
     margin-left: 15px; /* Отступ между иконками (подберите по Figma) */
 }
+
 .user-actions-item:first-child {
     margin-left: 0; /* Убираем отступ у первой иконки */
 }
@@ -119,6 +124,7 @@
     display: block; /* Убирает лишние отступы */
     fill: #333; /* Цвет иконок, если это SVG и используется currentColor */
 }
+
 /* Стили для зеленой навигационной панели */
 .main-nav {
     background-color: #e9f5e9; /* Точный светло-зеленый цвет из Figma (пример) */
@@ -253,4 +259,127 @@
     display: block; /* Убираем лишние отступы у иконки */
     width: 24px; /* Размер иконки корзины, настройте по Figma */
     height: 24px;
+}
+
+.footer-logo img {
+    display: block; /* Убирает лишний отступ под изображением */
+    height: 40px; /* Или другая высота из Figma */
+}
+
+/* --- Футер (Общее) --- */
+.page-footer {
+    background-color: #e9f5e9; /* ТОЧНЫЙ СВЕТЛО-ЗЕЛЕНЫЙ ЦВЕТ из Figma */
+    padding: 30px 0; /* Вертикальные отступы внутри футера (подберите по Figma) */
+    margin-top: 40px; /* Отступ сверху от основного контента (если нужно) */
+    border-top: 1px solid #333333; /* Темная линия сверху футера (если есть в дизайне) */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Распределяет колонки по ширине */
+    align-items: center; /* Выравнивает колонки по вертикальному центру */
+    gap: 20px; /* Промежуток между колонками, если space-between не дает нужного эффекта */
+}
+
+.footer-column {
+    /* Можно добавить flex-basis или width, если нужно точное распределение ширины,
+       но для начала justify-content: space-between должно сработать. */
+}
+
+.footer-logo-column {
+    /* Специфичные стили для колонки с лого, если нужны */
+}
+
+.footer-logo img {
+    display: block;
+    height: 40px;
+    width: auto;
+}
+
+
+/* --- Блок "Мы в соцсетях" --- */
+.footer-socials-column {
+    text-align: center; /* Центрируем заголовок, если он над списком */
+}
+
+.socials-title {
+    display: inline-flex; /* Чтобы иконка и текст были в ряд и центрировались вместе */
+    align-items: center;
+    font-size: 16px; /* Размер шрифта (из Figma) */
+    font-weight: 500; /* Насыщенность (из Figma) */
+    color: #333; /* Цвет текста (из Figma) */
+    margin-bottom: 15px; /* Отступ под заголовком */
+}
+
+.socials-title-icon {
+    width: 20px; /* Размер иконки (из Figma) */
+    height: 20px;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+.socials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Центрируем список, если он уже, чем колонка */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    gap: 8px 20px; /* Отступы: между рядами 8px, между колонками 20px (подберите) */
+    max-width: 300px; /* Ограничиваем ширину списка соцсетей, чтобы не растягивался сильно */
+}
+
+.socials-item {
+    /* Стили для элемента списка, если нужны */
+}
+
+.socials-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px; /* Размер шрифта (из Figma) */
+    color: #333; /* Цвет текста (из Figma) */
+    font-weight: bold;
+}
+
+.socials-link:hover {
+    color: #007bff; /* Цвет при наведении (из Figma) */
+}
+
+.socials-icon {
+    width: 20px; /* Размер иконки соцсети (из Figma) */
+    height: 20px;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+/* --- Кнопки в футере --- */
+.footer-actions-column {
+    display: flex; /* Располагаем кнопки в ряд */
+    gap: 75px; /* Отступ между кнопками (подберите по Figma) */
+}
+
+.button.button-red {
+    display: inline-flex; /* Для выравнивания иконки и текста внутри кнопки */
+    align-items: center;
+    justify-content: center;
+    background-color: #e53e3e; /* Красный цвет фона (из Figma) */
+    color: black;
+    border: 2px solid #c53030; /* Рамка чуть темнее (из Figma) */
+    border-radius: 8px; /* Скругление углов (из Figma) */
+    padding: 10px 20px; /* Внутренние отступы (из Figma) */
+    text-decoration: none; /* Для ссылки .contacts-button */
+    font-size: 15px; /* Размер шрифта (из Figma) */
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+.button.button-red:hover {
+    background-color: #c53030; /* Цвет фона при наведении */
+    border-color: #333333;
+}
+
+.subscribe-icon {
+    width: 18px; /* Размер иконки в кнопке (из Figma) */
+    height: 18px;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    fill: black; /* Если это SVG и нужно задать цвет */
 }
