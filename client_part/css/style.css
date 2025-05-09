@@ -1,9 +1,134 @@
+/* --- Шапка (Общее) --- */
+.page-header {
+    /* Если у .header-top будет свой фон, то здесь общий фон для всей шапки не нужен,
+       либо это будет фон только для .main-nav, если .header-top имеет другой.
+       Судя по всему, .header-top и .main-nav имеют одинаковый светло-зеленый фон.
+       Если это так, то можно задать фон для .page-header и убрать его из .main-nav
+       или оставить как есть (фон для .header-top и фон для .main-nav).
+       Давайте предположим, что у .header-top такой же фон, как у .main-nav.
+    */
+}
+
+/* --- Верхняя часть шапки --- */
+.header-top {
+    background-color: #e9f5e9; /* ТОЧНЫЙ СВЕТЛО-ЗЕЛЕНЫЙ ЦВЕТ из Figma */
+    padding: 15px 0; /* Вертикальные отступы, подберите по Figma */
+}
+
+.header-top-container {
+    display: flex; /* !!! ОСНОВНОЕ ДЛЯ ГОРИЗОНТАЛЬНОГО РАСПОЛОЖЕНИЯ !!! */
+    align-items: center; /* Выравнивает элементы по центру вертикальной оси */
+    justify-content: space-between; /* Распределяет пространство: лого слева, иконки справа, остальное между */
+}
+
+/* --- Логотип в шапке --- */
+.header-logo img {
+    display: block; /* Убирает лишний отступ под изображением */
+    height: 40px; /* Или другая высота из Figma */
+    /* width: auto; */ /* Чтобы сохранялись пропорции */
+}
+
+/* --- Кнопка "Каталог товаров" --- */
+.catalog-button {
+    display: flex; /* Чтобы иконка и текст внутри кнопки были в ряд */
+    align-items: center; /* Выравниваем иконку и текст по вертикали */
+    padding: 10px 15px; /* Внутренние отступы кнопки (подберите по Figma) */
+    background-color: #f0f0f0; /* Цвет фона кнопки (из Figma) */
+    border: 1px solid #cccccc; /* Рамка кнопки (из Figma) */
+    border-radius: 8px; /* Скругление углов (из Figma) */
+    font-size: 15px; /* Размер шрифта */
+    color: #333;
+    cursor: pointer;
+    margin-left: 20px; /* Отступ от логотипа (подберите) */
+    /* margin-right: 20px; */ /* Отступ до поля поиска - будет управляться через flex-grow у поиска */
+    white-space: nowrap; /* Чтобы текст "Каталог товаров" не переносился */
+}
+
+.catalog-button img { /* Если иконка бургер-меню это img */
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+    width: 20px; /* Размер иконки */
+    height: 20px;
+}
+.catalog-button svg { /* Если иконка бургер-меню это inline SVG */
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Чтобы цвет SVG наследовался от кнопки */
+}
+
+
+/* --- Форма поиска --- */
+.search-form {
+    display: flex; /* Чтобы инпут и кнопка поиска были в ряд */
+    align-items: center; /* Выравниваем их по вертикали */
+    flex-grow: 1; /* !!! ПОЗВОЛЯЕТ ПОИСКУ ЗАНЯТЬ ДОСТУПНОЕ ПРОСТРАНСТВО МЕЖДУ КАТАЛОГОМ И ИКОНКАМИ !!! */
+    margin-left: 20px; /* Отступ от кнопки "Каталог" */
+    margin-right: 50px; /* Отступ до иконок действий */
+    background-color: #f0f0f0; /* Фон поля поиска (из Figma) */
+    border: 1px solid #cccccc; /* Рамка поля поиска (из Figma) */
+    border-radius: 8px; /* Скругление углов (из Figma) */
+    padding-left: 10px; /* Отступ для текста внутри инпута */
+}
+
+.search-input {
+    flex-grow: 1; /* Инпут занимает все доступное место внутри search-form */
+    border: none; /* Убираем стандартную рамку инпута */
+    background-color: transparent; /* Делаем фон инпута прозрачным, т.к. фон у .search-form */
+    padding: 10px 5px; /* Внутренние отступы инпута */
+    font-size: 15px;
+    outline: none; /* Убираем стандартную обводку при фокусе */
+    color: #333;
+}
+.search-input::placeholder {
+    color: #888; /* Цвет плейсхолдера */
+}
+
+.search-button {
+    background: none; /* Убираем фон кнопки */
+    border: none; /* Убираем рамку кнопки */
+    padding: 8px 10px; /* Отступы для кликабельности иконки */
+    cursor: pointer;
+    display: flex; /* Для выравнивания SVG, если используется */
+    align-items: center;
+}
+.search-button img { /* Если иконка поиска это img */
+    width: 20px; /* Размер иконки */
+    height: 20px;
+    display: block;
+}
+.search-button svg { /* Если иконка поиска это inline SVG */
+    width: 20px;
+    height: 20px;
+    fill: #555; /* Цвет иконки поиска (из Figma) */
+}
+
+/* --- Список действий пользователя (сравнение, избранное, корзина) --- */
+.user-actions-list {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Располагаем иконки в ряд */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+.user-actions-item {
+    margin-left: 15px; /* Отступ между иконками (подберите по Figma) */
+}
+.user-actions-item:first-child {
+    margin-left: 0; /* Убираем отступ у первой иконки */
+}
+
+.user-action-link img,
+.user-action-link svg { /* Стили для иконок действий */
+    width: 27px; /* Размер иконок из вашего HTML */
+    height: 27px;
+    display: block; /* Убирает лишние отступы */
+    fill: #333; /* Цвет иконок, если это SVG и используется currentColor */
+}
 /* Стили для зеленой навигационной панели */
 .main-nav {
     background-color: #e9f5e9; /* Точный светло-зеленый цвет из Figma (пример) */
     padding: 15px 0; /* Вертикальные отступы внутри панели (подберите по Figma) */
-    border-top: 1px solid #d0e0d0; /* Тонкая линия сверху, если есть в дизайне */
-    border-bottom: 1px solid #d0e0d0; /* Тонкая линия снизу, если есть в дизайне */
 }
 
 /* Стили для списка навигации */
@@ -29,15 +154,13 @@
     color: #333333; /* Цвет текста (подберите по Figma) */
     font-size: 15px; /* Размер шрифта (подберите по Figma) */
     font-weight: 500; /* Насыщенность шрифта (подберите по Figma) */
-    padding: 8px 10px; /* Небольшие отступы вокруг текста и иконки для кликабельности */
+    padding: 16px 20px; /* Небольшие отступы вокруг текста и иконки для кликабельности */
     /* transition: color 0.2s ease-in-out; */ /* Плавное изменение цвета при наведении */
 }
 
 /* Стили для иконки внутри ссылки */
 .nav-link-icon {
-    margin-right: 8px; /* Отступ между иконкой и текстом */
-    /* Если используете inline SVG и хотите, чтобы цвет наследовался: */
-    /* fill: currentColor; */
+    margin-right: 30px; /* Отступ между иконкой и текстом */
 }
 
 /* Эффект при наведении на ссылку (опционально) */
