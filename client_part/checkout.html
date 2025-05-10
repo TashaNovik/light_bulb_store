@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - Лампочка</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- КОПИРУЕМ ШАПКУ (аналогично cart.html) -->
+    <header class="page-header">
+        <!-- ... (полный код шапки) ... -->
+    </header>
+    <!-- КОНЕЦ СКОПИРОВАННОЙ ШАПКИ -->
+
+    <main class="page-main checkout-page">
+        <div class="container">
+            <div class="checkout-header-bar"> <!-- Аналогично .cart-header-bar -->
+                <h1>Оформление заказа</h1>
+            </div>
+
+            <form action="order-confirmation.html" method="POST" class="checkout-form">
+                <!-- Секция: Информация о клиенте -->
+                <fieldset class="checkout-section client-info-section">
+                    <legend class="checkout-section-title">
+                        <img src="logo_ikons/handshake.svg" alt="" class="section-title-icon"> <!-- Замените иконку -->
+                        Информация о клиенте
+                    </legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="checkout-name">Имя</label>
+                            <input type="text" id="checkout-name" name="client_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-phone">Телефон</label>
+                            <input type="tel" id="checkout-phone" name="client_phone" required placeholder="+7 (___) ___-__-__">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-surname">Фамилия</label>
+                            <input type="text" id="checkout-surname" name="client_surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">E-mail</label>
+                            <input type="email" id="checkout-email" name="client_email" required placeholder="example@mail.com">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Секция: Способ доставки -->
+                <div class="delivery-payment-wrapper">
+                    <fieldset class="checkout-section delivery-method-section">
+                        <legend class="checkout-section-title">
+                            <img src="logo_ikons/truck.svg" alt="" class="section-title-icon">
+                            Способ доставки
+                        </legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="delivery_method" value="post_office" checked>
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/post-office.svg" alt="" class="radio-option-icon">
+                                Самовывоз из почтового отделения
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delivery_method" value="store_pickup">
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/shop.svg" alt="" class="radio-option-icon">
+                                Самовывоз из магазина
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delivery_method" value="courier">
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/delivery_courier.svg" alt="" class="radio-option-icon">
+                                Доставка курьером на дом
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Секция: Способ оплаты -->
+                    <fieldset class="checkout-section payment-method-section">
+                        <legend class="checkout-section-title">
+                            <img src="logo_ikons/dollar_shopping_finance.svg" alt="" class="section-title-icon">
+                            Способ оплаты
+                        </legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment_method" value="cash_on_delivery" checked>
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/debet_card.svg" alt="" class="radio-option-icon">
+                                Оплата при получении заказа
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment_method" value="online_apple_google">
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/cash_finance_phone_mobile_payment.svg" alt="" class="radio-option-icon">
+                                Онлайн оплата / ApplePay / GooglePay
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment_method" value="bank_transfer">
+                                <span class="custom-radio"></span>
+                                <img src="logo_ikons/payment_business_bill.svg" alt="" class="radio-option-icon">
+                                Безналичный расчет без НДС
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Секция: Адрес доставки (может быть скрыта/показана в зависимости от способа доставки JS'ом) -->
+                <fieldset class="checkout-section delivery-address-section">
+                    <legend class="checkout-section-title">
+                        <img src="logo_ikons/location-map.svg" alt="" class="section-title-icon">
+                        Адрес доставки
+                    </legend>
+                    <div class="form-grid address-grid">
+                        <div class="form-group">
+                            <label for="checkout-city">Город</label>
+                            <input type="text" id="checkout-city" name="delivery_city">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-house">Дом, квартира</label>
+                            <input type="text" id="checkout-house" name="delivery_house">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-street">Улица</label>
+                            <input type="text" id="checkout-street" name="delivery_street">
+                        </div>
+                        <div class="form-group full-width-group">
+                            <label for="checkout-notes">Примечание к заказу</label>
+                            <textarea id="checkout-notes" name="delivery_notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="checkout-actions"> <!-- Аналогично .cart-actions -->
+                    <button type="submit" class="button button-red submit-order-btn">Оформить заказ</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
