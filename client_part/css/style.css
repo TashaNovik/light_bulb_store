@@ -1,5 +1,6 @@
 .page-header {
     margin-bottom: 50px;
+    border-bottom: 1px solid #000000;
 }
 
 .header-top {
@@ -318,6 +319,10 @@
     text-align: center;
 }
 
+.nav-item-image{
+    padding-right: 15px;
+}
+
 .socials-title {
     display: inline-flex;
     align-items: center;
@@ -550,6 +555,7 @@
     background-color: #e9f5e9;
     padding: 15px 20px;
     margin-bottom: 30px;
+    border: 1px solid #000000;
 }
 
 .checkout-header-bar h1 {
@@ -691,6 +697,7 @@
     padding: 20px;
     text-align: center;
     margin-top: 10px;
+    border : 1px solid #000000;
 }
 
 .submit-order-btn {
@@ -701,7 +708,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px);
     padding: 20px 0;
 
 }
