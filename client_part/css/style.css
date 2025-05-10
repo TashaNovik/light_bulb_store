@@ -501,7 +501,7 @@ Use code with cautio
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #333333;
     margin-bottom: 15px;
     background-color: #fff;
     position: relative; /* Для позиционирования кнопки удаления */
@@ -516,7 +516,7 @@ Use code with cautio
     height: 80px;
     object-fit: contain; /* Чтобы изображение не искажалось */
     margin-right: 20px;
-    border: 1px solid #f0f0f0; /* Легкая рамка вокруг картинки */
+    border: 1px solid #333333 /* Легкая рамка вокруг картинки */
 }
 
 .cart-item-info {
