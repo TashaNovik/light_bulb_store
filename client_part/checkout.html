@@ -8,24 +8,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- КОПИРУЕМ ШАПКУ (аналогично cart.html) -->
     <header class="page-header">
-        <!-- ... (полный код шапки) ... -->
     </header>
-    <!-- КОНЕЦ СКОПИРОВАННОЙ ШАПКИ -->
-
     <main class="page-main checkout-page">
         <div class="container">
-            <div class="checkout-header-bar"> <!-- Аналогично .cart-header-bar -->
+            <div class="checkout-header-bar">
                 <h1>Оформление заказа</h1>
             </div>
-
             <form action="order-confirmation.html" method="POST" class="checkout-form">
-                <!-- Секция: Информация о клиенте -->
                 <fieldset class="checkout-section client-info-section">
                     <legend class="checkout-section-title">
-                        <img src="logo_ikons/handshake.svg" alt="" class="section-title-icon"> <!-- Замените иконку -->
+                        <img src="logo_ikons/handshake.svg" alt="" class="section-title-icon">
                         Информация о клиенте
                     </legend>
                     <div class="form-grid">
@@ -47,8 +40,6 @@
                         </div>
                     </div>
                 </fieldset>
-
-                <!-- Секция: Способ доставки -->
                 <div class="delivery-payment-wrapper">
                     <fieldset class="checkout-section delivery-method-section">
                         <legend class="checkout-section-title">
@@ -76,8 +67,6 @@
                             </label>
                         </div>
                     </fieldset>
-
-                    <!-- Секция: Способ оплаты -->
                     <fieldset class="checkout-section payment-method-section">
                         <legend class="checkout-section-title">
                             <img src="logo_ikons/dollar_shopping_finance.svg" alt="" class="section-title-icon">
@@ -105,8 +94,6 @@
                         </div>
                     </fieldset>
                 </div>
-
-                <!-- Секция: Адрес доставки (может быть скрыта/показана в зависимости от способа доставки JS'ом) -->
                 <fieldset class="checkout-section delivery-address-section">
                     <legend class="checkout-section-title">
                         <img src="logo_ikons/location-map.svg" alt="" class="section-title-icon">
@@ -132,7 +119,7 @@
                     </div>
                 </fieldset>
 
-                <div class="checkout-actions"> <!-- Аналогично .cart-actions -->
+                <div class="checkout-actions">
                     <button type="submit" class="button button-red submit-order-btn">Оформить заказ</button>
                 </div>
             </form>

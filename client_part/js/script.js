@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountElement = document.querySelector('.cart-count');
     const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
-    // --- ОБЩИЕ ФУНКЦИИ КОРЗИНЫ ---
+
     function getCart() {
         return JSON.parse(localStorage.getItem('shoppingCart')) || [];
     }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`${product.name} добавлен в корзину!`);
     }
 
-    // --- ЛОГИКА ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (`main_page.html`) ---
+
     if (addToCartButtons.length > 0) {
         addToCartButtons.forEach(button => {
             button.addEventListener('click', (event) => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- ЛОГИКА ДЛЯ СТРАНИЦЫ КОРЗИНЫ (`cart.html`) ---
+
     const cartItemsListElement = document.querySelector('.cart-items-list');
     const cartTotalAmountElement = document.querySelector('.cart-total .total-amount');
 
@@ -87,9 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="logo_ikons/close.svg" alt="Удалить">
                 </button>
             `;
-            // Примечание: в макете цена за шт. Мы можем показывать или общую, или за шт.
-            // Здесь показана общая цена за позицию (item.price * item.quantity)
-            // Если нужна цена за шт, то просто item.price + " руб/шт"
             cartItemsListElement.appendChild(listItem);
         });
 
@@ -151,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- ИНИЦИАЛИЗАЦИЯ ---
     updateCartCount();
 
     if (cartItemsListElement) {

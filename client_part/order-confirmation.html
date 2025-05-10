@@ -9,35 +9,30 @@
 </head>
 <body>
 
-    <header class="page-header simplified-header"> <!-- Добавляем класс для упрощенной шапки -->
-        <div class="container header-top-container"> <!-- Используем существующий контейнер для выравнивания лого -->
-            <a href="main_page.html" class="logo header-logo">
-                <img src="logo_ikons/logolampa.png" alt="Логотип Лампочка"> <!-- Убедитесь, что путь к лого верный -->
-            </a>
-            <!-- Остальные элементы шапки здесь не нужны -->
+<header class="page-header simplified-header">
+    <div class="container header-top-container">
+        <a href="main_page.html" class="logo header-logo">
+            <img src="logo_ikons/logolampa.png" alt="Логотип Лампочка">
+        </a>
+    </div>
+</header>
+
+<main class="page-main order-confirmation-page">
+    <div class="container confirmation-container">
+        <div class="confirmation-icon-wrapper">
+            <img src="logo_ikons/success_done.svg" alt="Заказ успешно оформлен" class="confirmation-icon">
         </div>
-    </header>
-
-    <main class="page-main order-confirmation-page">
-        <div class="container confirmation-container">
-            <div class="confirmation-icon-wrapper">
-                <img src="logo_ikons/success_done.svg" alt="Заказ успешно оформлен" class="confirmation-icon"> <!-- Замените на вашу зеленую галочку -->
-            </div>
-            <h1 class="confirmation-title">Спасибо, ваш заказ оформлен</h1>
-            <p class="confirmation-tracking-code">
-                Код отслеживания заказа: <span class="tracking-code-value">123wery6709</span> <!-- Этот код будет динамическим -->
-            </p>
-            <p class="confirmation-email-info">
-                Письмо-подтверждение отправлено на e-mail
-            </p>
-            <div class="confirmation-actions">
-                <a href="main_page.html" class="button button-green continue-shopping-confirm-btn">Продолжить покупки</a>
-            </div>
+        <h1 class="confirmation-title">Спасибо, ваш заказ оформлен</h1>
+        <p class="confirmation-tracking-code">
+            Код отслеживания заказа: <span class="tracking-code-value">123wery6709</span>
+        </p>
+        <p class="confirmation-email-info">
+            Письмо-подтверждение отправлено на e-mail
+        </p>
+        <div class="confirmation-actions">
+            <a href="main_page.html" class="button button-green continue-shopping-confirm-btn">Продолжить покупки</a>
         </div>
-    </main>
-
-    <!-- Подвал здесь не нужен, согласно макету -->
-
-    <!-- <script src="js/script.js"></script> --> <!-- JS может понадобиться для отображения реального кода заказа -->
+    </div>
+</main>
 </body>
 </html>
