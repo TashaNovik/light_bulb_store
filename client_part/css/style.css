@@ -772,3 +772,94 @@ Use code with cautio
     /* Дополнительно, если нужно переопределить */
     /* min-width: 250px; */ /* Пример минимальной ширины */
 }
+
+/* --- Стили для страницы Подтверждения заказа --- */
+.order-confirmation-page {
+    display: flex; /* Для вертикального центрирования confirmation-container */
+    flex-direction: column;
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center;    /* Центрирование по горизонтали */
+    min-height: calc(100vh - 80px); /* Пример: высота экрана минус высота упрощенной шапки */
+    /* Вычитаем высоту .simplified-header, чтобы контент был по центру видимой области */
+    padding: 20px 0; /* Отступы на случай, если контент не помещается */
+
+}
+
+/* Упрощенная шапка */
+.simplified-header {
+    background-color: #e9f5e9; /* Светло-зеленый фон, как в макете */
+    padding: 35px 0;
+    border-bottom: 1px solid #000000;
+
+
+}
+.simplified-header .header-top-container {
+    justify-content: flex-start; /* Логотип слева, больше ничего */
+}
+
+
+.confirmation-container {
+    background-color: #ffffff; /* Белый фон для блока подтверждения */
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px; /* Ограничиваем ширину блока */
+    width: 100%;
+}
+
+.confirmation-icon-wrapper {
+    margin-bottom: 25px;
+}
+
+.confirmation-icon {
+    width: 80px; /* Размер зеленой галочки */
+    height: 80px;
+}
+
+.confirmation-title {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.confirmation-tracking-code {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+.tracking-code-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.confirmation-email-info {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.confirmation-actions {
+    margin-top: 20px;
+}
+
+.button.button-green { /* Стили для зеленой кнопки */
+    display: inline-block;
+    background-color: #4CAF50; /* Зеленый цвет (из Figma) */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Скругление (из Figma) */
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.button.button-green:hover {
+    background-color: #45a049; /* Более темный зеленый при наведении */
+}
+.button.button-green:active {
+    background-color: #3e8e41; /* Более темный зеленый при нажатии */
+}
